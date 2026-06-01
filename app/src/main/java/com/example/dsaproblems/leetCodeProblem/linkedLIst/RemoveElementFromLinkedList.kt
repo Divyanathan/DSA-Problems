@@ -16,7 +16,7 @@ fun main(){
     println("\n===================================================\n")
 }
 
-fun removeElements(head: Node?, data: Int): Node? {
+internal fun removeElements(head: Node?, data: Int): Node? {
     var dummy : Node? = Node(0)
     dummy?.next = head
     var start : Node? = dummy

@@ -17,7 +17,7 @@ fun main(){
 }
 
 
-fun reverseLinkedList(list: Node?) : Node?{
+internal fun reverseLinkedList(list: Node?) : Node?{
     var current = list
     var node : Node?  = null
     while (current != null) {

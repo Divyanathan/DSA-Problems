@@ -19,7 +19,7 @@ fun main() {
     println("\n===================================================\n")
 }
 
-fun mergeSortedLinkedList(list1: Node?, list2: Node?): Node? {
+internal fun mergeSortedLinkedList(list1: Node?, list2: Node?): Node? {
     val dummy = Node(0)
     var head: Node? = dummy
     var linkedList1 = list1

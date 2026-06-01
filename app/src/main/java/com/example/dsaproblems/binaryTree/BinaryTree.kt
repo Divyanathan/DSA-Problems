@@ -13,10 +13,10 @@ fun main(){
 
 }
 
-class Node(val data:Int, var leftNode: Node? = null, var rightNode: Node?=null)
+internal class Node(val data:Int, var leftNode: Node? = null, var rightNode: Node?=null)
 
 
-class BinaryTree{
+internal class BinaryTree{
     private val nodes = intArrayOf(1,2,4,-1,-1,5,-1,-1,3,-1,6,-1,-1)
     private var idx  = -1
 

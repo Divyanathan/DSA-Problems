@@ -17,7 +17,7 @@ fun main(){
 }
 
 
-fun reverseSublist(list: Node?, left :Int, right :Int): Node? {
+internal fun reverseSublist(list: Node?, left :Int, right :Int): Node? {
 
     var dummy = Node(0)
     dummy.next = list

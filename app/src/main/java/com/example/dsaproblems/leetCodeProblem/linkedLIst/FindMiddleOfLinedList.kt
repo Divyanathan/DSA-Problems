@@ -20,7 +20,7 @@ fun main() {
 
 }
 
-fun findMiddleOfLinkedList(head: Node?): Node? {
+internal fun findMiddleOfLinkedList(head: Node?): Node? {
     var slow = head
     var fast = head
     while (fast?.next != null) {
