@@ -39,3 +39,14 @@ internal fun generateListInReverse(list :Node?,start:Int =3, end:Int = 1) : Node
     }
     return head
 }
+
+internal fun Node?.printCycleNode(count :Int) {
+    var thisNode = this
+    var i = 1
+    while (i<=count) {
+        print(" ${thisNode?.data} ${if (thisNode?.next != null) "->" else ""}")
+        thisNode = thisNode?.next
+        i++
+    }
+    println()
+}
