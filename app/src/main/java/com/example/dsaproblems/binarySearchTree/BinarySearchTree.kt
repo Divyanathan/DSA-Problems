@@ -1,9 +1,9 @@
 
 
 fun main(){
-    println("Hi")
-    val array = intArrayOf(5,1,3,4,2,7)
+//    val array = intArrayOf(5,1,3,4,2,7)
 //    val array = intArrayOf(4,5,6,2,1,3)
+    val array = intArrayOf(8,5,10,11,14,3,6,1,4,7)
     var root : BSTNode? = null
     for (i in array){
         root = buildTree(root,i)
@@ -20,8 +20,8 @@ fun main(){
     println("DescendingOrder")
     descendingOrder(root)
     println()
-    println("Find Range 2 to 5")
-    findRange(root,2,5)
+    println("Find Range 6 to 10")
+    findRange(root,6,10)
     println()
     println("Root to leaf path")
     rootToLeafPath(root, arrayListOf())
