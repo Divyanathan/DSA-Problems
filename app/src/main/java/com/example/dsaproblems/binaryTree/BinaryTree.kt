@@ -13,7 +13,10 @@ fun main(){
     println("Binary Tree Implementation")
 //    val array = intArrayOf(1,2,4,-1,-1,5,-1,-1,3,-1,6,-1,-1)
     val array = intArrayOf(5,1,-1,3,2,-1,-1,4,-1,-1,7,-1,-1)
+    val subTreeArray = intArrayOf(3,2,-1,-1,5,-1,-1)
     val root = buildTree(null,array)
+    index = -1
+    val subTree = buildTree(null,subTreeArray)
     println("InOrder")
     inOrder(root)
     println()
@@ -31,6 +34,7 @@ fun main(){
     println("Height  of nodes =  ${heightOfNodes(root)}" )
     println("Diameter O(NSquare)  of nodes =  ${diaMeterOfNode(root)}" )
     println("Diameter2 O(N) of nodes = ${diameter2(root).diameter}" )
+    println("Is Subtree ${isSubTree(root,subTree)}")
 }
 
 
@@ -151,4 +155,26 @@ fun diameter2(root:Node?): DiameterTree {
         hightOfRoot,
         diam
     )
+}
+
+fun isIdentical(root:Node? , subTree: Node?) : Boolean {
+
+    if (root==null && subTree==null){
+        return true
+    }
+
+    if (root?.data != subTree?.data){
+        return false
+    }
+    return isIdentical(root?.left,subTree?.left) && isIdentical(root?.righ,subTree?.righ)
+}
+
+fun isSubTree(root:Node?,subtree:Node?) : Boolean {
+    if (root == null || subtree == null){
+        return false
+    }
+    if (root.data == subtree.data){
+        return isIdentical(root,subtree)
+    }
+    return isSubTree(root.left,subtree) || isSubTree(root.righ,subtree)
 }
