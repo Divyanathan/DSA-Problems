@@ -6,11 +6,13 @@ fun main(){
     val maxHeap = buildMaxHeapByCreatingNewList(list)
     println("Max Heap HeapifyUP = $maxHeap")
     println("Max Heap HeapifyDown = ${buildMaxWithExistingList(list)}")
+    println("Delete Heap")
+    deleteHeap(maxHeap)
 }
 
 
 
-fun buildMaxHeapByCreatingNewList(list:MutableList<Int>) : List<Int>{
+fun buildMaxHeapByCreatingNewList(list:MutableList<Int>) : MutableList<Int>{
     val maxHeap = mutableListOf<Int>()
 
     for (index in list.indices){
@@ -68,6 +70,17 @@ fun heapiFyDown(list: MutableList<Int>,index : Int) {
 
         list.swap(largest,parent)
         parent = largest
+    }
+}
+
+fun deleteHeap(list:MutableList<Int>){
+    while (list.isNotEmpty()) {
+        print("${list[0]} ")
+        if (list.size==0)
+            break
+        list.swap(0, list.size - 1)
+        list.removeAt(list.size - 1)
+        heapiFyDown(list,0)
     }
 }
 
