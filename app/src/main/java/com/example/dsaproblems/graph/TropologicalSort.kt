@@ -5,16 +5,20 @@ import java.util.Stack
 
 fun main(){
     println("Topological Sort")
-    val graph : HashMap<Int, List<Int>> = LinkedHashMap()
-    graph[4] = listOf(1,0)
-    graph[5] = listOf(2,0)
-    graph[0] = listOf()
-    graph[1] = listOf()
-    graph[2] = listOf(3)
-    graph[3] = listOf(1)
+    val graph : HashMap<Int, List<Int>> = linkedMapOf(
+        4 to listOf(1,0),
+        5 to listOf(2,0),
+        0 to listOf(),
+        1 to listOf(),
+        2 to listOf(3),
+        3 to listOf(1)
+    )
     topologicalSort(graph)
 }
 
+/**
+ * TopologicalSort Can be performed only on non-cyclic Directed Graph
+ */
 fun topologicalSort(graph : Map<Int,List<Int>>){
     val visited : HashSet<Int> = HashSet()
     val stackVertex : Stack<Int> = Stack()
