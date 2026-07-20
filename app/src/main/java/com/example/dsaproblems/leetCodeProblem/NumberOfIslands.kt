@@ -36,7 +36,7 @@ fun main() {
         }
     }
 
-    println("Island 2 Using CharArray with different input Result = \"$island2\"")
+    println("Island  Using CharArray with different input Result = \"$island2\"")
 
     val rows = 4
     val cols = 5
@@ -82,6 +82,22 @@ fun main() {
     }
     println("Island 4 Using Array<Array<Int> > Result = \"$island4\"")
 
+    val graph5 = arrayOf(
+        arrayOf(1, 1, 0, 0, 0),
+        arrayOf(1, 1, 0, 0, 0),
+        arrayOf(0, 0, 1, 0, 0),
+        arrayOf(0, 0, 0, 1, 1)
+    )
+    var island5 = 0
+    for (i in 0..3) {
+        for (j in 0..4) {
+            if (graph5[i][j] != 0) {
+                dfsDiagonal(graph5, i, j, rows, cols)
+                island5++
+            }
+        }
+    }
+    println("Island 5 Covering Diagonals As well Result = \"$island5\"")
 
 }
 
@@ -116,4 +132,20 @@ fun dfs(graph: Array<Array<Int>>, i: Int, j: Int, row: Int, cols: Int) {
     dfs(graph, i, j - 1, row, cols)
     dfs(graph, i + 1, j, row, cols)
     dfs(graph, i - 1, j, row, cols)
+}
+
+fun dfsDiagonal(graph: Array<Array<Int>>, i: Int, j: Int, row: Int, cols: Int) {
+    if ((i in 0..<row && j in 0..<cols).not() || graph[i][j] == 0) {
+        return
+    }
+    graph[i][j] = 0
+    dfsDiagonal(graph, i, j + 1, row, cols)
+    dfsDiagonal(graph, i, j - 1, row, cols)
+    dfsDiagonal(graph, i + 1, j, row, cols)
+    dfsDiagonal(graph, i - 1, j, row, cols)
+    //Diagonals
+    dfsDiagonal(graph, i - 1, j + 1, row, cols)
+    dfsDiagonal(graph, i + 1, j + 1, row, cols)
+    dfsDiagonal(graph, i + 1, j - 1, row, cols)
+    dfsDiagonal(graph, i - 1, j - 1, row, cols)
 }
