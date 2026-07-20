@@ -11,7 +11,6 @@ package com.example.dsaproblems
             sum += num
             count += map[sum-k] ?: 0
             map[sum] = (map[sum] ?: 0) + 1
-            println("$sum")
         }
 
         return count

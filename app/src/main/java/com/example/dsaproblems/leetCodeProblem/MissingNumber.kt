@@ -1,6 +1,6 @@
 package com.example.dsaproblems.leetCodeProblem
 
-/*
+/**
 Given an array nums containing n distinct numbers in the range [0, n], return the only number in the range that is missing from the array.
 
 
@@ -37,14 +37,13 @@ n = 9 since there are 9 numbers, so all numbers are in the range [0,9]. 8 is the
 
 fun main(){
 
-    val arr = intArrayOf(8,6,4,2,3,9,7,0,1)
-//    val arr = intArrayOf(3,0,1)
+//    val arr = intArrayOf(8,6,4,2,3,9,7,0,1)
+    val arr = intArrayOf(3,0,1)
     var result = 0
 
     for (i in arr.indices){
         result +=  arr[i] - i
     }
 
-
-    println("result $result --- ${arr.size - result}" )
+    println("Missing number --- ${arr.size - result}" )
 }
