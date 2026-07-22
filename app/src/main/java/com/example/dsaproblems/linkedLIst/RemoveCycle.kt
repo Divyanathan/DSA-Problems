@@ -1,12 +1,12 @@
-package com.example.dsaproblems.leetCodeProblem.linkedLIst
+package com.example.dsaproblems.linkedLIst
 
-import com.example.dsaproblems.leetCodeProblem.linkedLIst.data.Node
-import com.example.dsaproblems.leetCodeProblem.linkedLIst.data.printCycleNode
-import com.example.dsaproblems.leetCodeProblem.linkedLIst.data.printNode
+import com.example.dsaproblems.linkedLIst.data.Node
+import com.example.dsaproblems.linkedLIst.data.printCycleNode
+import com.example.dsaproblems.linkedLIst.data.printNode
 
 fun main(){
     val list = Node(1)
-    var head :Node? = list
+    var head : Node? = list
     var next : Node? = list
     next?.next = Node(2)
     next = next?.next
@@ -19,21 +19,21 @@ fun main(){
     next = next?.next
     next?.next = node3
     println("\n============= RemoveCycle ==============\n ")
-    println("Is Given List is cycle -> ${isCycle(head)!=null}\n")
+    println("Is Given List is cycle -> ${isCycle(head) !=null}\n")
     println("Since it's has cycle it will print as much as the count you give her i gave 15 but the length is only 5\n")
     head.printCycleNode(15)
     println()
     head = removeCycle(head)
     head.printNode()
     println()
-    println("Is Given List is cycle ->  ${isCycle(head)!=null}")
+    println("Is Given List is cycle ->  ${isCycle(head) !=null}")
 
     println("\n===================================================\n")
 }
 
-internal fun removeCycle(node: Node?):Node?{
+internal fun removeCycle(node: Node?): Node?{
     val head = node
-    var slow :Node?  = isCycle(node)  ?: return null
+    var slow : Node?  = isCycle(node)  ?: return null
 
     var fast : Node? = node
     var prevNode : Node? = null

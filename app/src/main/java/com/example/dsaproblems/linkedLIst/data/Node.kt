@@ -1,4 +1,4 @@
-package com.example.dsaproblems.leetCodeProblem.linkedLIst.data
+package com.example.dsaproblems.linkedLIst.data
 
 internal data class Node(
     val data: Int,
@@ -25,9 +25,9 @@ internal fun generateList(start:Int =1, end:Int = 5) : Node?{
     return head?.next
 }
 
-internal fun generateLinkedList(list: IntArray = intArrayOf(1,2,3,4,5)) :Node?{
+internal fun generateLinkedList(list: IntArray = intArrayOf(1,2,3,4,5)) : Node?{
     val head = Node(0)
-    var next :Node? = head
+    var next : Node? = head
     for (i in list){
         next?.next = Node(i)
         next = next?.next
@@ -35,7 +35,7 @@ internal fun generateLinkedList(list: IntArray = intArrayOf(1,2,3,4,5)) :Node?{
     return head.next
 }
 
-internal fun generateListInReverse(list :Node?,start:Int =3, end:Int = 1) : Node?{
+internal fun generateListInReverse(list : Node?, start:Int =3, end:Int = 1) : Node?{
     val head = list
     var next : Node? = head
     while (next!=null){

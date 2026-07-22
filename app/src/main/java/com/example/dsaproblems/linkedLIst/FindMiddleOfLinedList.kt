@@ -1,8 +1,8 @@
-package com.example.dsaproblems.leetCodeProblem.linkedLIst
+package com.example.dsaproblems.linkedLIst
 
-import com.example.dsaproblems.leetCodeProblem.linkedLIst.data.Node
-import com.example.dsaproblems.leetCodeProblem.linkedLIst.data.generateList
-import com.example.dsaproblems.leetCodeProblem.linkedLIst.data.printNode
+import com.example.dsaproblems.linkedLIst.data.Node
+import com.example.dsaproblems.linkedLIst.data.generateList
+import com.example.dsaproblems.linkedLIst.data.printNode
 
 fun main() {
 
