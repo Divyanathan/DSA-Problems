@@ -1,8 +1,8 @@
-import java.sql.DriverManager.println
+package com.example.dsaproblems
+
 import java.util.ArrayList
 
-
-val arrayOfValues = intArrayOf(1,2,3,4,5,6)
+val arrayOfValues = intArrayOf(1,5,2,6,3,4)
 val target = 4
 var result = ArrayList<ArrayList<Int>>()
 
@@ -10,7 +10,7 @@ fun main(){
     println("without duplicate")
     combinationSumWithOutDuplicate(ArrayList(),0,0)
     for (combination in result){
-        println(combination.toString())
+       println(combination.toString())
     }
 
     println("with duplicate")
@@ -21,7 +21,7 @@ fun main(){
     }
 }
 
-fun combinationSumWithDuplicate(combination:ArrayList<Int>, sum:Int){
+fun combinationSumWithDuplicate(combination: ArrayList<Int>, sum: Int) {
     if (sum == target) {
         result.add(ArrayList(combination))
         return
@@ -29,11 +29,10 @@ fun combinationSumWithDuplicate(combination:ArrayList<Int>, sum:Int){
     if (sum > target) {
         return
     }
-    for (i in arrayOfValues){
+    for (i in arrayOfValues) {
         combination.add(i)
-        combinationSumWithDuplicate(combination, sum+i)
-        if (combination.size > 0)
-            combination.removeAt(combination.size - 1)
+        combinationSumWithDuplicate(combination, sum + i)
+        combination.remove(i)
     }
 }
 
