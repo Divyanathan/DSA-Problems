@@ -31,28 +31,27 @@ package com.example.dsaproblems.slidingWindow
 */
 
 fun main(){
-    println("Hi")
-//    val string = "abcabcbb"
-    val string = "pwwkew"
-    val hashSet : ArrayList<Char> = ArrayList()
-    var i=0
-    var j=0
+    println("Sliding Window ")
+    val string = "abcabcbb"
+//    val string = "pwwkew"
+    println("Given String $string")
+    println("Longest Substring Without Repeating Characters \"${lengthOfLongestSubstring(string)}\"")
+
+}
+
+fun lengthOfLongestSubstring(s: String): Int {
+    var i = 0
+    var j = 0
     var max = 0
-
-    while (i < string.length - 1 && j<string.length) {
-        if (hashSet.contains(string[j]).not()){
-            hashSet.add(string[j])
-            j +=1
-        }else{
-            hashSet.removeAt(0)
-            i+=1
+    val hashSet:HashSet<Char> = HashSet()
+    while(j<s.length){
+        if(hashSet.contains(s[j])){
+            hashSet.remove(s[i])
+            i++
         }
-        if (hashSet.size>max) {
-            max = hashSet.size
-            println(hashSet)
-        }
+        hashSet.add(s[j])
+        j++
+        max = Math.max(max, hashSet.size)
     }
-
-    println(max)
-
+    return max
 }
