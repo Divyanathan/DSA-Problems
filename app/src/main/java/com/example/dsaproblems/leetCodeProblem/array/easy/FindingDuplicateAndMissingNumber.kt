@@ -1,4 +1,4 @@
-package com.example.dsaproblems.leetCodeProblem.array
+package com.example.dsaproblems.leetCodeProblem.array.easy
 
 import kotlin.math.abs
 
